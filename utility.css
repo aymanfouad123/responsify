@@ -14,3 +14,15 @@
   border: 2px solid black;
   margin: 3px;
 }
+
+.rounded {
+  border-radius: 5px;
+}
+
+.m-1 {
+  margin: 5px;
+}
+
+.p-1 {
+  padding: 10px;
+}
