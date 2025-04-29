@@ -175,6 +175,22 @@
   padding: 5px;
 }
 
+.card .img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+
+.card .img-container:hover::after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .songtitle {
   font-weight: 300;
   font-size: large;
