@@ -130,3 +130,40 @@
   cursor: pointer;
   border: none;
 }
+
+.cardcontainer {
+  margin-top: 20px;
+}
+
+.spotplaylist {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 20px;
+  height: 75vh;
+}
+
+.spotplaylist .card {
+  width: 153px;
+  height: 153px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card > * {
+  padding: 5px;
+}
+
+.songtitle {
+  font-weight: 300;
+  font-size: large;
+}
+
+.songdesc {
+  font-weight: 100;
+  font-size: medium;
+}
