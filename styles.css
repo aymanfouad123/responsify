@@ -158,6 +158,12 @@
   height: 153px;
 }
 
+.card .img-container:hover .play {
+  opacity: 1;
+  bottom: 13px;
+  transform: translateY(0);
+}
+
 .card img {
   width: 153px;
   height: 153px;
@@ -186,11 +192,15 @@
   border-radius: 50%;
   position: absolute;
   right: 13px;
-  bottom: 13px;
+  bottom: -13px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
 .play img {
