@@ -133,6 +133,9 @@
 
 .cardcontainer {
   margin-top: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .spotplaylist {
@@ -143,13 +146,13 @@
 }
 
 .spotplaylist .card {
-  width: 153px;
-  height: 153px;
+  width: 160px;
+  height: 230px;
 }
 
 .card img {
-  width: 100%;
-  height: 100%;
+  width: 153px;
+  height: 153px;
   object-fit: cover;
   border-radius: 15px;
 }
