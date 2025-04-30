@@ -143,7 +143,8 @@
   border-radius: 5px;
   color: white;
   padding: 20px;
-  height: 75vh;
+  height: 85vh;
+  overflow: scroll;
 }
 
 .card {
