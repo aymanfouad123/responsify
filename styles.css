@@ -27,6 +27,7 @@
 
 .right {
   width: 75vw;
+  position: relative;
 }
 
 .spot-logo {
@@ -116,9 +117,15 @@
 
 .signbutton {
   background-color: transparent;
-  color: white;
+  color: rgb(156, 149, 149);
   border: none;
   outline: none;
+  cursor: pointer;
+}
+
+.signbutton:hover {
+  transform: scale(1.05);
+  color: white;
 }
 
 .loginbutton {
@@ -131,8 +138,13 @@
   border: none;
 }
 
+.loginbutton:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
 .cardcontainer {
-  margin-top: 20px;
+  margin-top: 35px;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -143,8 +155,12 @@
   border-radius: 5px;
   color: white;
   padding: 20px;
-  height: 85vh;
+  height: 588px;
   overflow: scroll;
+}
+
+.spotplaylist h2 {
+  font-weight: 400;
 }
 
 .card {
@@ -229,4 +245,13 @@
   height: 24px;
   position: relative;
   left: 2px; /* Add an offset to center the play icon*/
+}
+
+.playbar {
+  position: absolute;
+  bottom: 0;
+}
+
+.songbuttons {
+  background-color: white;
 }
