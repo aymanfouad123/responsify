@@ -10,5 +10,5 @@ teaching myself web dev and avoiding tutorial hell.
 - vanilla js
 
 \
-![Mobile UI Preview](assets/mobile-ui.png)
+<img src="assets/mobile-ui.png" alt="Mobile UI Preview" width="250"/>
 reference image: current spotify iphone reponsiveness

@@ -19,5 +19,9 @@ async function getSongs(){
     return songs
 }
 
-let songs = getSongs()
-console.log(songs)
+async function main(){
+    let songs = await getSongs()
+    console.log(songs)
+}
+
+main()
