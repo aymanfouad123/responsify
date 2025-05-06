@@ -12,6 +12,12 @@
   color: white;
 } */
 
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
 .bg-black {
   background-color: black;
 }
@@ -264,4 +270,11 @@
 }
 
 .songbuttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.songbuttons .playbut {
+  transform: scale(1.2);
 }
