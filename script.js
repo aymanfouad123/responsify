@@ -22,6 +22,16 @@ async function getSongs(){
 async function main(){
     let songs = await getSongs()
     console.log(songs)
+
+    const playBtn = document.querySelector('.playbut');
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            var audio = new Audio(songs[0]);
+            audio.play();
+        });
+    } else {
+        console.error("Play button image not found!");
+    }
 }
 
 main()

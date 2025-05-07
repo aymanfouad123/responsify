@@ -9,6 +9,12 @@ teaching myself web dev and avoiding tutorial hell.
 - css (grid / flexbox)
 - vanilla js
 
-\
-<img src="assets/mobile-ui.png" alt="Mobile UI Preview" width="250"/>
-reference image: current spotify iphone reponsiveness
+<div align="center">
+
+  <img src="assets/mobile-ui.png" alt="Mobile UI Preview" width="350"/>
+
+  <div>
+    <sub>reference image: current spotify iphone responsiveness</sub>
+  </div>
+
+</div>
