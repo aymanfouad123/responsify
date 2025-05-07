@@ -29,6 +29,7 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word;
 }
 
 .right {
@@ -277,4 +278,12 @@
 
 .songbuttons .playbut {
   transform: scale(1.2);
+}
+
+.songlist ul {
+  padding: 25px 30px;
+}
+
+.songlist li {
+  list-style-type: decimal;
 }
