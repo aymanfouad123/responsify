@@ -23,8 +23,8 @@
 }
 
 .left {
-  width: 25vw;
-  max-width: 250px;
+  width: 30vw;
+  max-width: 350px;
   padding: 5px;
   background-color: black;
   display: flex;
@@ -281,9 +281,33 @@
 }
 
 .songlist ul {
-  padding: 25px 30px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  padding: 25px 10px;
 }
 
 .songlist li {
   list-style-type: decimal;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 12px 0;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.playnow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+  margin-left: auto;
+}
+
+.songlist li img {
+  width: 20px;
 }
