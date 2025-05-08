@@ -136,6 +136,10 @@ body {
   text-decoration: none;
 }
 
+.footer a:hover {
+  color: white;
+}
+
 .buttons > * {
   margin: 0 12px;
   font-weight: 500;
@@ -189,7 +193,7 @@ body {
 
 .spotplaylist h2 {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .card {
@@ -279,6 +283,9 @@ body {
 .playbar {
   background-color: #1f1f1f;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 15px;
 }
 
 .songbuttons {
@@ -382,4 +389,37 @@ body {
 .songlist li,
 .song-card {
   border: none !important;
+}
+
+.seekbar {
+  height: 4px;
+  width: 100%;
+  background-color: #5e5e5e;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.seekbar-progress {
+  height: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  width: 30%; /* Representing playback progress */
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #1fdf64;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.seekbar:hover .circle {
+  opacity: 1;
 }
