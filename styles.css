@@ -32,7 +32,6 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  gap: 5px;
 }
 
 .bg-black {
@@ -49,12 +48,11 @@ body {
 }
 
 .right {
-  width: 75%;
+  flex: 1;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .spot-logo {
@@ -80,7 +78,6 @@ body {
 .library {
   min-height: 70vh;
   height: 100%;
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -114,11 +111,8 @@ body {
   z-index: 10;
   background-color: black;
   justify-content: space-between;
-  margin: 10px 0px 0px 0px;
-}
-
-.header > * {
-  padding: 13px;
+  align-items: center;
+  padding: 10px;
 }
 
 .nav {
@@ -183,16 +177,19 @@ body {
 }
 
 .spotplaylist {
-  flex: 1 1 auto;
+  flex: 1;
   overflow-y: auto;
   background-color: #1f1f1f;
   border-radius: 5px;
   color: white;
-  padding: 20px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
 }
 
 .spotplaylist h2 {
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .card {
@@ -280,12 +277,8 @@ body {
 }
 
 .playbar {
-  margin-top: auto;
-  padding: 16px;
   background-color: #1f1f1f;
-  width: 100%;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .songbuttons {
@@ -300,6 +293,8 @@ body {
 
 .songlist {
   padding-top: 20px;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .song-card {
