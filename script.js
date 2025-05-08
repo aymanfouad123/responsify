@@ -38,15 +38,16 @@ async function main(){
 
 
         songUl.innerHTML = songUl.innerHTML + `
-        <li>
-            <img class="invert" src="images/${imageFile}" alt="">
-            <div class="info">
-                <div>${songName}</div>
-                <div>${artist}</div>
+        <li class="song-card">
+            <div class="song-img-container">
+            <img class="song-img" src="images/${imageFile}" alt="Song Cover">
+            <div class="play-overlay">
+                <img src="images/play.svg" alt="Play">
             </div>
-            <div class="playnow">
-                <span>Play Now</span>
-                <img class="invert" src="images/play.svg" alt="">
+            </div>
+            <div class="song-info">
+            <div class="song-title">${songName}</div>
+            <div class="song-artist">${artist}</div>
             </div>
         </li>
     `;
