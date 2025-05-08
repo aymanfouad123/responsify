@@ -23,9 +23,33 @@ async function main(){
     let songs = await getSongs()
     console.log(songs)
 
+    const songImageMap = {
+        "Trippie Redd  Weeeeee (Official Music Video).mp3": "weeetrippie.jpeg",
+        "The Weeknd  Timeless with Playboi Carti (Official Music Video).mp3": "timeless.jpeg"
+      };
+
     let songUl = document.querySelector(".songlist").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        songUl.innerHTML = songUl.innerHTML + `<li> ${song.replaceAll("%20", " ")} </li>`;
+        let [artist, songWithExt] = song.replaceAll("%20", " ").split("  ");
+        let songName = songWithExt ? songWithExt.replace(".mp3", "") : "";
+
+        // Get the image filename from the map
+        let imageFile = songImageMap[song.replaceAll("%20", " ")] || "images/home.svg"; // fallback to home.svg
+
+
+        songUl.innerHTML = songUl.innerHTML + `
+        <li>
+            <img class="invert" src="images/${imageFile}" alt="">
+            <div class="info">
+                <div>${songName}</div>
+                <div>${artist}</div>
+            </div>
+            <div class="playnow">
+                <span>Play Now</span>
+                <img class="invert" src="images/play.svg" alt="">
+            </div>
+        </li>
+    `;
     }
 
     const playBtn = document.querySelector('.playbut');

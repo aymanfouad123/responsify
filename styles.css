@@ -7,6 +7,12 @@
   font-optical-sizing: auto;
 }
 
+html,
+body {
+  height: 100vh;
+  background: #000;
+}
+
 /* body {
   background-color: black;
   color: white;
@@ -25,6 +31,7 @@
 .left {
   width: 30vw;
   max-width: 350px;
+  height: 100vh;
   padding: 5px;
   background-color: black;
   display: flex;
@@ -38,7 +45,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .spot-logo {
@@ -63,6 +70,8 @@
 
 .library {
   min-height: 70vh;
+  height: 100%;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -165,7 +174,7 @@
 }
 
 .spotplaylist {
-  flex: 1;
+  flex: 1 1 auto;
   overflow-y: auto;
   background-color: #1f1f1f;
   border-radius: 5px;
@@ -262,12 +271,12 @@
 }
 
 .playbar {
-  position: sticky;
-  bottom: 12px;
+  margin-top: auto;
   padding: 16px;
   background-color: #1f1f1f;
-  width: 72.5vw;
+  width: 100%;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .songbuttons {
