@@ -285,11 +285,49 @@ body {
   left: 2px; /* Add an offset to center the play icon*/
 }
 
+.topbar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.barsonginfo,
+.songtime {
+  flex: 1;
+  min-width: 0;
+  max-width: 200px;
+  color: #fff;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.songtime {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.songbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex: 0 0 auto;
+}
+
 .playbar {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background-color: #1f1f1f;
   border-radius: 5px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 15px;
 }
 

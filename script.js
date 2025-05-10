@@ -3,6 +3,7 @@ console.log("Testing script");
 let currentSong = new Audio()
 currentSong.volume = 0.2
 let currentSongFilename = null; 
+let currentSongText = null; 
 let songs = []; 
 
 async function getSongs(){
@@ -28,6 +29,8 @@ const playMusic = (track) => {
     currentSong.src = "/songs/" + track
     currentSong.play()
     play.src = "images/pause.svg"
+    document.querySelector(".barsonginfo").innerHTML = currentSongText
+    document.querySelector(".songtime").innerHTML = "00:00"
 }
 
 async function main(){
@@ -48,7 +51,7 @@ async function main(){
 
 
         songUl.innerHTML = songUl.innerHTML + `
-        <li class="song-card"  data-filename="${song}">
+        <li class="song-card" data-textname="${songName}" data-filename="${song}">
             <div class="song-img-container">
                 <img class="song-img" src="images/${imageFile}" alt="Song Cover">
                 <div class="play-overlay">
@@ -67,6 +70,7 @@ async function main(){
         element.addEventListener("click", e => {
             const filename = element.getAttribute("data-filename");
             currentSongFilename = filename;
+            currentSongText = element.getAttribute("data-textname");
             playMusic(filename)
         })
     });
@@ -76,6 +80,12 @@ async function main(){
             // No song selected yet, play the first song
             if (songs.length > 0) {
                 currentSongFilename = songs[0];
+                const firstSongCard = document.querySelector(".songlist li");
+                if (firstSongCard) {
+                    currentSongText = firstSongCard.getAttribute("data-textname");
+                } else {
+                    currentSongText = ""; // fallback
+                }
                 playMusic(currentSongFilename);
             }
         } else if (currentSong.paused) {
