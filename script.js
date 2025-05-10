@@ -25,12 +25,18 @@ async function getSongs(){
     return songs
 }
 
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
 const playMusic = (track) => {
-    currentSong.src = "/songs/" + track
-    currentSong.play()
-    play.src = "images/pause.svg"
-    document.querySelector(".barsonginfo").innerHTML = currentSongText
-    document.querySelector(".songtime").innerHTML = "00:00"
+    currentSong.src = "/songs/" + track;
+    currentSong.play();
+    play.src = "images/pause.svg";
+    document.querySelector(".barsonginfo").innerHTML = currentSongText;
 }
 
 async function main(){
@@ -95,6 +101,11 @@ async function main(){
             currentSong.pause();
             play.src = "images/play.svg";
         }
+    });
+
+    currentSong.addEventListener("timeupdate", ()=>{
+        console.log(currentSong.currentTime, currentSong.duration);
+        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`
     })
 }
 
