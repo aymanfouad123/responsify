@@ -19,9 +19,13 @@ async function getSongs(){
     return songs
 }
 
+const playMusic = (track) => {
+    let audio = new Audio("/songs/" + track)
+    audio.play()
+}
+
 async function main(){
     let songs = await getSongs()
-    console.log(songs)
 
     const songImageMap = {
         "Trippie Redd  Weeeeee (Official Music Video).mp3": "weeetrippie.jpeg",
@@ -38,7 +42,7 @@ async function main(){
 
 
         songUl.innerHTML = songUl.innerHTML + `
-        <li class="song-card">
+        <li class="song-card"  data-filename="${song}">
             <div class="song-img-container">
                 <img class="song-img" src="images/${imageFile}" alt="Song Cover">
                 <div class="play-overlay">
@@ -53,6 +57,13 @@ async function main(){
     `;
     }
 
+    Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(element => {
+        element.addEventListener("click", e => {
+            const filename = element.getAttribute("data-filename");
+            console.log(filename)
+            playMusic(filename)
+        })
+    });
 }
 
 main()
