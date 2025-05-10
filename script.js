@@ -2,6 +2,8 @@ console.log("Testing script");
 
 let currentSong = new Audio()
 currentSong.volume = 0.2
+let currentSongFilename = null; 
+let songs = []; 
 
 async function getSongs(){
     let a =  await fetch("http://127.0.0.1:5500/songs/")
@@ -25,6 +27,7 @@ async function getSongs(){
 const playMusic = (track) => {
     currentSong.src = "/songs/" + track
     currentSong.play()
+    play.src = "images/pause.svg"
 }
 
 async function main(){
@@ -63,10 +66,26 @@ async function main(){
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(element => {
         element.addEventListener("click", e => {
             const filename = element.getAttribute("data-filename");
-            console.log(filename)
+            currentSongFilename = filename;
             playMusic(filename)
         })
     });
+
+    play.addEventListener("click", ()=>{
+        if (!currentSongFilename) {
+            // No song selected yet, play the first song
+            if (songs.length > 0) {
+                currentSongFilename = songs[0];
+                playMusic(currentSongFilename);
+            }
+        } else if (currentSong.paused) {
+            currentSong.play();
+            play.src = "images/pause.svg";
+        } else {
+            currentSong.pause();
+            play.src = "images/play.svg";
+        }
+    })
 }
 
 main()

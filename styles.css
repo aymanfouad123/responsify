@@ -299,6 +299,10 @@ body {
   gap: 15px;
 }
 
+.songbuttons:hover {
+  cursor: pointer;
+}
+
 .songbuttons .playbut {
   transform: scale(1.2);
 }
