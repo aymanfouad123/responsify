@@ -104,8 +104,19 @@ async function main(){
     });
 
     currentSong.addEventListener("timeupdate", ()=>{
-        console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`
+        let barlength = (currentSong.currentTime/currentSong.duration)*100;
+        document.querySelector(".seekbar-progress").style.width = barlength + "%";
+        document.querySelector(".circle").style.left = barlength + "%";
+    })
+
+    let isSeeking = false;
+
+    document.querySelector(".seekbar").addEventListener("click", e=>{
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width)*100;
+        document.querySelector(".seekbar-progress").style.width = percent + "%";
+        document.querySelector(".circle").style.left = percent + "%";
+        currentSong.currentTime = (currentSong.duration)*percent / 100
     })
 }
 
