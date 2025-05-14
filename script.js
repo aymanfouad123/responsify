@@ -104,20 +104,30 @@ async function main(){
     });
 
     currentSong.addEventListener("timeupdate", ()=>{
-        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`
+        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
+
         let barlength = (currentSong.currentTime/currentSong.duration)*100;
         document.querySelector(".seekbar-progress").style.width = barlength + "%";
         document.querySelector(".circle").style.left = barlength + "%";
-    })
+    });
 
-    let isSeeking = false;
-
-    document.querySelector(".seekbar").addEventListener("click", e=>{
-        let percent = (e.offsetX / e.target.getBoundingClientRect().width)*100;
-        document.querySelector(".seekbar-progress").style.width = percent + "%";
-        document.querySelector(".circle").style.left = percent + "%";
-        currentSong.currentTime = (currentSong.duration)*percent / 100
-    })
+    document.querySelector(".seekbar").addEventListener("click", e => {
+        // Always get the seekbar element, not whatever was clicked
+        const seekbar = document.querySelector(".seekbar");
+        const rect = seekbar.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percent = clickX / rect.width;
+        
+        // Add error checking for audio duration
+        if (currentSong.duration) {
+            const newTime = percent * currentSong.duration;
+            currentSong.currentTime = newTime;
+        
+            // Manually update UI for instant feedback
+            document.querySelector(".seekbar-progress").style.width = (percent * 100) + "%";
+            document.querySelector(".circle").style.left = (percent * 100) + "%";
+        }
+    });
 }
 
 main()
