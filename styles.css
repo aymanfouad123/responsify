@@ -505,4 +505,52 @@ body {
     transition: left 0.3s ease-in-out;
     background-color: black;
   }
+
+  .left.active {
+    left: 0; /* Slide in when active */
+  }
+
+  /* Adding an overlay when the menu is open */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 15px); /* 2 cards per row on tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%; /* 1 card per row on phones */
+  }
 }

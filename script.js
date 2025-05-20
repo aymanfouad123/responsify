@@ -25,6 +25,33 @@ async function getSongs(){
     return songs
 }
 
+function setupMobileMenu() {
+    // Get our elements
+    const hamburger = document.querySelector('.hamburger-menu');
+    const leftMenu = document.querySelector('.left');
+    const body = document.body;
+
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    body.appendChild(overlay);
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        leftMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        // Prevent scrolling when menu is open
+        body.style.overflow = leftMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && leftMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+}
+
+
 function formatTime(seconds) {
     if (isNaN(seconds)) return "00:00";
     const mins = Math.floor(seconds / 60);
@@ -41,7 +68,7 @@ const playMusic = (track) => {
 
 async function main(){
     let songs = await getSongs()
-
+    setupMobileMenu();
     const songImageMap = {
         "Trippie Redd  Weeeeee (Official Music Video).mp3": "weeetrippie.jpeg",
         "The Weeknd  Timeless with Playboi Carti (Official Music Video).mp3": "timeless.jpeg"
