@@ -470,3 +470,39 @@ body {
 .seekbar:hover .circle {
   opacity: 1;
 }
+
+.hamburger-menu {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 23px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Show on mobile */
+  }
+
+  .left {
+    position: fixed;
+    left: -280px; /* Start off-screen */
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    background-color: black;
+  }
+}
