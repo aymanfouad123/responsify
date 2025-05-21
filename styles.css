@@ -285,31 +285,39 @@ body {
   left: 2px; /* Add an offset to center the play icon*/
 }
 
-.topbar {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.barsonginfo,
-.songtime {
-  flex: 1;
-  min-width: 0;
-  max-width: 200px;
+.songtime,
+.songtime-top,
+.songtime-bottom {
+  flex: 0 0 90px;
+  min-width: 90px;
+  max-width: 120px;
   color: #fff;
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.songtime {
-  text-align: right;
-  justify-content: flex-end;
+.topbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+.bottombar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .songbuttons {
@@ -480,8 +488,8 @@ body {
 }
 
 .volume-icon {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 }
 
 .volume-bar {

@@ -102,16 +102,19 @@
                             <img id="previous" src="images/prevsong.svg" alt="">
                             <img id="play" class="playbut" src="images/play.svg" alt="">
                             <img id="next" src="images/nextsong.svg" alt="">
-                        </div> 
-                        <div class="songtime"></div>
+                        </div>
+                        <div class="volume-container">
+                            <img src="images/volume.svg" alt="Volume" class="volume-icon invert">
+                            <input type="range" min="0" max="1" step="0.01" value="0.2" class="volume-bar">
+                        </div>
+                        <div class="songtime songtime-top"></div>
                     </div>
-                    <div class="seekbar">
-                        <div class="seekbar-progress"></div>
-                        <div class="circle"></div>
-                    </div>
-                    <div class="volume-container">
-                        <img src="images/volume.svg" alt="Volume" class="volume-icon invert">
-                        <input type="range" min="0" max="1" step="0.01" value="0.2" class="volume-bar">
+                    <div class="bottombar">
+                        <div class="seekbar">
+                            <div class="seekbar-progress"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="songtime songtime-bottom"></div>
                     </div>
                 </div>
             </div>

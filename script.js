@@ -160,10 +160,13 @@ async function main(){
         }
     });
 
-    currentSong.addEventListener("timeupdate", ()=>{
-        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
+    currentSong.addEventListener("timeupdate", () => {
+        // Update only the bottom bar songtime
+        document.querySelector(".songtime-bottom").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
+        // Clear the top bar songtime for layout consistency
+        document.querySelector(".songtime-top").innerHTML = "";
 
-        let barlength = (currentSong.currentTime/currentSong.duration)*100;
+        let barlength = (currentSong.currentTime / currentSong.duration) * 100;
         document.querySelector(".seekbar-progress").style.width = barlength + "%";
         document.querySelector(".circle").style.left = barlength + "%";
     });
