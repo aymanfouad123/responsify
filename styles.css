@@ -625,3 +625,45 @@ body {
     width: 100%; /* 1 card per row on phones */
   }
 }
+
+@media screen and (max-width: 400px) {
+  .topbar {
+    gap: 6px;
+    padding: 0 4px;
+  }
+  .barsonginfo {
+    width: 120px;
+    max-width: 40vw;
+    font-size: 14px;
+    flex: 0 1 40vw;
+  }
+  .songbuttons {
+    gap: 10px;
+  }
+  .volume-container {
+    gap: 4px;
+    margin-left: 4px;
+  }
+  .volume-bar {
+    width: 60px;
+  }
+  .bottombar {
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .songtime {
+    min-width: 50px;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .playbar {
+    padding: 6px;
+  }
+  .card {
+    width: 100%;
+    padding: 8px 8px 16px 8px;
+  }
+  .spotplaylist {
+    padding: 10px;
+  }
+}
