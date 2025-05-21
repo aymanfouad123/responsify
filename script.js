@@ -192,12 +192,19 @@ async function main(){
         if (idx > 0) {
             playSongAtIndex(idx - 1);
         }
+        else {
+            // If at the first song, go to the last
+            playSongAtIndex(songs.length - 1);
+        }
     });
     
     document.getElementById('next').addEventListener('click', () => {
         let idx = getCurrentSongIndex();
         if (idx < songs.length - 1) {
             playSongAtIndex(idx + 1);
+        } else {
+            // If at the last song (or idx is -1), go to the first
+            playSongAtIndex(0);
         }
     });
 }
