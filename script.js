@@ -97,7 +97,7 @@ const playMusic = (track) => {
 }
 
 async function main(){
-    let songs = await getSongs()
+    songs = await getSongs()
     setupMobileMenu();
     const songImageMap = {
         "Trippie Redd  Weeeeee (Official Music Video).mp3": "weeetrippie.jpeg",
@@ -183,6 +183,21 @@ async function main(){
             // Manually update UI for instant feedback
             document.querySelector(".seekbar-progress").style.width = (percent * 100) + "%";
             document.querySelector(".circle").style.left = (percent * 100) + "%";
+        }
+    });
+
+    document.getElementById('previous').addEventListener('click', () => {
+        let idx = getCurrentSongIndex();
+        console.log(idx);
+        if (idx > 0) {
+            playSongAtIndex(idx - 1);
+        }
+    });
+    
+    document.getElementById('next').addEventListener('click', () => {
+        let idx = getCurrentSongIndex();
+        if (idx < songs.length - 1) {
+            playSongAtIndex(idx + 1);
         }
     });
 }
