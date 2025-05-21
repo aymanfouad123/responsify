@@ -207,6 +207,15 @@ async function main(){
             playSongAtIndex(0);
         }
     });
+
+    // Adding volume bar 
+    const volumeBar = document.querySelector('.volume-bar');
+    if (volumeBar) {
+        volumeBar.value = currentSong.volume;
+        volumeBar.addEventListener('input', (e)=>{
+            currentSong.volume = parseFloat(e.target.value);
+        })
+    }
 }
 
 main()

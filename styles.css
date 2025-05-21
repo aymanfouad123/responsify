@@ -471,6 +471,25 @@ body {
   opacity: 1;
 }
 
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  width: 150px;
+}
+
+.volume-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.volume-bar {
+  width: 100px;
+  accent-color: #1fdf64;
+  cursor: pointer;
+}
+
 /* Hamburger menu styles */
 .hamburger-menu {
   display: none; /* Hidden by default on desktop */
