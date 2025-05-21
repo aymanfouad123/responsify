@@ -25,6 +25,24 @@ async function getSongs(){
     return songs
 }
 
+function getCurrentSongIndex(){
+    return songs.indexOf(currentSongFilename);
+}
+
+function playSongAtIndex(index) {
+    if (index >= 0 && index < songs.length) {
+        currentSongFilename = songs[index];
+        // Find the corresponding song card to get the display name
+        const songCards = document.querySelectorAll('.songlist li');
+        if (songCards[index]) {
+            currentSongText = songCards[index].getAttribute('data-textname');
+        } else {
+            currentSongText = '';
+        }
+        playMusic(currentSongFilename);
+    }
+}
+
 function setupMobileMenu() {
     // Get our elements
     const hamburger = document.querySelector('.header .hamburger-menu');
