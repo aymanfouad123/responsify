@@ -27,23 +27,35 @@ async function getSongs(){
 
 function setupMobileMenu() {
     // Get our elements
-    const hamburger = document.querySelector('.hamburger-menu');
+    const hamburger = document.querySelector('.header .hamburger-menu');
+    const closeButton = document.querySelector('.left .close-button');
     const leftMenu = document.querySelector('.left');
     const body = document.body;
 
-    // Create overlay element
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    body.appendChild(overlay);
+    // Create overlay element if it doesn't exist
+    let overlay = document.querySelector('.menu-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        body.appendChild(overlay);
+    }
+
     function toggleMenu() {
-        hamburger.classList.toggle('active');
         leftMenu.classList.toggle('active');
         overlay.classList.toggle('active');
-        // Prevent scrolling when menu is open
         body.style.overflow = leftMenu.classList.contains('active') ? 'hidden' : '';
     }
-    hamburger.addEventListener('click', toggleMenu);
+
+    // Open menu with hamburger button
+    if (hamburger) hamburger.addEventListener('click', toggleMenu);
+    
+    // Close menu with X button
+    if (closeButton) closeButton.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking overlay
     overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when resizing to desktop
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768 && leftMenu.classList.contains('active')) {
             toggleMenu();
