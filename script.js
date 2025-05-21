@@ -161,10 +161,7 @@ async function main(){
     });
 
     currentSong.addEventListener("timeupdate", () => {
-        // Update only the bottom bar songtime
-        document.querySelector(".songtime-bottom").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
-        // Clear the top bar songtime for layout consistency
-        document.querySelector(".songtime-top").innerHTML = "";
+        document.querySelector(".bottombar .songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
 
         let barlength = (currentSong.currentTime / currentSong.duration) * 100;
         document.querySelector(".seekbar-progress").style.width = barlength + "%";
@@ -216,7 +213,7 @@ async function main(){
     if (volumeBar) {
         volumeBar.value = currentSong.volume;
         volumeBar.addEventListener('input', (e)=>{
-            currentSong.volume = parseFloat(e.target.value);
+            currentSong.volume = parseFloat(e.target.value)
         })
     }
 }

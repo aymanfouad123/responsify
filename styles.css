@@ -285,39 +285,22 @@ body {
   left: 2px; /* Add an offset to center the play icon*/
 }
 
-.songtime,
-.songtime-top,
-.songtime-bottom {
-  flex: 0 0 90px;
-  min-width: 90px;
-  max-width: 120px;
-  color: #fff;
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: right;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  gap: 16px;
 }
 
-.bottombar {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
+.barsonginfo {
+  width: 200px;
   min-width: 0;
-  box-sizing: border-box;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .songbuttons {
@@ -326,6 +309,42 @@ body {
   align-items: center;
   gap: 24px;
   flex: 0 0 auto;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  margin-left: 16px;
+}
+
+.bottombar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 10px;
+}
+
+.seekbar {
+  flex: 1;
+  height: 4px;
+  background-color: #5e5e5e;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.songtime {
+  min-width: 80px;
+  color: #fff;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 8px;
 }
 
 .playbar {
@@ -337,12 +356,10 @@ body {
   gap: 10px;
   padding: 10px;
   overflow: hidden;
-}
-
-.songbuttons {
+  height: 80px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
 }
 
 .songbuttons:hover {
@@ -446,15 +463,6 @@ body {
   border: none !important;
 }
 
-.seekbar {
-  height: 4px;
-  width: 100%;
-  background-color: #5e5e5e;
-  border-radius: 2px;
-  position: relative;
-  cursor: pointer;
-}
-
 .seekbar-progress {
   height: 100%;
   background-color: #fff;
@@ -477,14 +485,6 @@ body {
 
 .seekbar:hover .circle {
   opacity: 1;
-}
-
-.volume-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  width: 150px;
 }
 
 .volume-icon {
